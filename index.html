@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Roofing Solutions | Premier Commercial & Residential</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Whop SDK -->
+  <script src="https://js.whop.com/v1" async></script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">Apex Roofing</div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#financing">Financing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#estimate" class="btn-primary">Get an Estimate</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Reliable Roofing Solutions for Your Home & Business</h1>
+      <p>Licensed, insured, and built to last. Book an inspection or request a free estimate today.</p>
+      <a href="#estimate" class="btn-hero">Request Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card" onclick="trackServiceView('Roof Repair')">
+          <h3>Roof Repair</h3>
+          <p>Emergency leak repairs, shingle replacement, and storm damage restoration.</p>
+        </div>
+        <div class="service-card" onclick="trackServiceView('Roof Replacement')">
+          <h3>Full Replacement</h3>
+          <p>Complete tear-offs and high-durability installations with lifetime warranties.</p>
+        </div>
+        <div class="service-card" onclick="trackServiceView('Roof Inspection')">
+          <h3>Professional Inspection</h3>
+          <p>Thorough structural inspections and digital health reports for insurance claims.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Callout -->
+  <section id="financing" class="financing">
+    <div class="container">
+      <h2>Flexible Financing Options Available</h2>
+      <p>0% APR financing available through Klarna, Afterpay, and Affirm via Whop Checkout.</p>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Transparent Pricing</h2>
+      <div class="pricing-grid">
+        <!-- Plan 1: Inspection Fee -->
+        <div class="plan-card">
+          <h3>Roof Inspection</h3>
+          <div class="price">$149 <span>one-time</span></div>
+          <p>Full 21-point structural evaluation and report.</p>
+          <button class="btn-checkout" onclick="initiateCheckout('plan_inspection')">Book Inspection</button>
+        </div>
+
+        <!-- Plan 2: Project Deposit -->
+        <div class="plan-card featured">
+          <h3>Project Deposit</h3>
+          <div class="price">$500 <span>deposit</span></div>
+          <p>Lock in your project date. Final balance billed via Whop Invoices.</p>
+          <button class="btn-checkout" onclick="initiateCheckout('plan_deposit')">Pay Deposit</button>
+        </div>
+
+        <!-- Plan 3: Flat-Rate Maintenance -->
+        <div class="plan-card">
+          <h3>Annual Maintenance</h3>
+          <div class="price">$299 <span>/ year</span></div>
+          <p>Bi-annual cleanings, gutter clears, and preventive tune-ups.</p>
+          <button class="btn-checkout" onclick="initiateCheckout('plan_annual')">Subscribe</button>
+        </div>
+      </div>
+      
+      <!-- Whop Payment Container -->
+      <div id="whop-checkout-container" class="whop-container hidden">
+        <div id="whop-branding-element"></div>
+        <div id="whop-payment-element"></div>
+        <div id="whop-express-checkout-element"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estimate Form (Whop Leads API) -->
+  <section id="estimate" class="estimate">
+    <div class="container">
+      <h2>Request an Estimate</h2>
+      <form id="lead-form" onsubmit="handleLeadSubmit(event)">
+        <div class="form-group">
+          <input type="text" id="lead-name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" id="lead-email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" id="lead-phone" placeholder="Phone Number" required />
+        </div>
+        <div class="form-group">
+          <textarea id="lead-notes" placeholder="Describe your roof issue..." rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Reviews & Trust -->
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p>"Apex replaced our roof after a storm. Prompt, clean, and seamless checkout!"</p>
+          <strong>- Mark T.</strong>
+        </div>
+        <div class="review-card">
+          <p>"The inspection report was super detailed. Worth every penny."</p>
+          <strong>- Sarah M.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
